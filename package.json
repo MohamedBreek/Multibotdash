@@ -1,0 +1,35 @@
+{
+  "name": "multibot-dashboard",
+  "version": "1.0.0",
+  "description": "MultiBot Real-time Statistics Dashboard",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2",
+    "mongodb": "^6.19.0",
+    "mongoose": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "dashboard",
+    "statistics"
+  ],
+  "author": "MultiBot Team",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

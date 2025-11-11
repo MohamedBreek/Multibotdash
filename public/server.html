@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Server</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script defer src="theme.js"></script>
+  </head>
+  <body class="text-gray-200 mb-gradient-bg">
+    <header class="mb-header sticky top-0 z-10">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="h-9 w-9 rounded-lg bg-gradient-to-br from-purple-600 to-cyan-400"
+          ></div>
+          <span class="font-extrabold text-lg">Multibot Dashboard</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <button onclick="MBTheme.toggle()" class="theme-toggle text-sm">
+            <span class="material-icons">brightness_6</span
+            ><span data-role="theme-label">Dark</span>
+          </button>
+          <a href="dashboard.html" class="mb-btn">Back to Dashboard</a>
+        </div>
+      </div>
+    </header>
+    <div class="flex min-h-[calc(100vh-68px)]">
+      <!-- Sidebar -->
+      <aside class="w-72 mb-sidebar flex flex-col py-8 px-4">
+        <div class="mb-10 text-center">
+          <div id="server-info" class="mb-2"></div>
+        </div>
+        <nav>
+          <div class="mb-6">
+            <h3 class="text-xs text-gray-500 uppercase mb-2 tracking-widest">
+              General
+            </h3>
+            <ul class="space-y-1">
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-700 text-white font-semibold"
+                  ><span class="material-icons align-middle">visibility</span>
+                  Overview</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800"
+                  ><span class="material-icons align-middle">settings</span>
+                  Server Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800"
+                  ><span class="material-icons align-middle">message</span>
+                  Embed Messages</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-800"
+                  ><span class="material-icons align-middle">star</span> Get
+                  Premium</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xs text-gray-500 uppercase mb-2 tracking-widest">
+              Module Settings
+            </h3>
+            <ul class="space-y-1" id="module-list">
+              <!-- Module items will be rendered here by JS -->
+            </ul>
+          </div>
+        </nav>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 p-10 flex flex-col items-center">
+        <div class="w-full max-w-3xl">
+          <h2
+            id="module-title"
+            class="text-3xl font-bold mb-6 text-center gradient-text"
+          >
+            Server Commands & Settings
+          </h2>
+          <div id="server-settings" class="mb-card rounded-2xl p-8 shadow-2xl">
+            <!-- Settings UI will be rendered here -->
+            <p class="text-gray-400 text-center">
+              (Demo) Here you can add/edit commands and settings for your
+              server.
+            </p>
+          </div>
+          <!-- Commands showcase -->
+          <section class="mt-10">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-semibold">Commands</h3>
+              <div class="flex gap-2">
+                <span class="mb-badge">Prefix: !</span>
+                <span class="mb-badge">Slash: /</span>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 mb-4" id="cmd-filters">
+              <button class="mb-badge mb-chip active" data-cat="all">
+                All
+              </button>
+              <button class="mb-badge mb-chip" data-cat="utility">
+                Utility
+              </button>
+              <button class="mb-badge mb-chip" data-cat="moderation">
+                Moderation
+              </button>
+              <button class="mb-badge mb-chip" data-cat="fun">Fun</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="cmd-grid">
+              <!-- Command cards injected by JS -->
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="server.js"></script>
+  </body>
+</html>

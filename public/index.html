@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiBot</title>
+    <link rel="icon" href="https://i.ibb.co/cqXrFHT/Multi-Bot-logo.png" type="image/png">
+    <!-- Link to the main stylesheet -->
+    <meta name="description" content="MultiBot - The Ultimate All-in-One Discord Bot for your server.">
+    <meta name="keywords" content="Discord Bot, MultiBot, All-in-One Bot, Moderation, Music, Fun Commands">
+    <meta name="author" content="MultiBot Team">
+    <link rel="stylesheet" href="style.css" />
+    <!-- Use the Inter font for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Include Tailwind CSS from a CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="theme.js"></script>
+
+</head>
+<body class="mb-gradient-bg text-gray-200">
+
+    <!-- Header Section -->
+    <header class="mb-header fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo and Bot Name -->
+            <div class="flex items-center space-x-4">
+                <!-- MultiBot Logo -->
+                <div class="relative">
+                    <img src="https://i.ibb.co/cqXrFHT/Multi-Bot-logo.png"
+                         alt="MultiBot Logo"
+                         class="h-16 w-16 rounded-2xl shadow-2xl"
+                         onerror="this.src='https://placehold.co/64x64/1e293b/cbd5e1?text=Logo'">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20"></div>
+                </div>
+                <div>
+                    <span class="text-4xl font-black text-white tracking-tight">MultiBot</span>
+                    <p class="text-sm text-gray-400 -mt-1">The Ultimate Discord Bot</p>
+                </div>
+            </div>
+            <!-- Navigation Links -->
+            <div class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#features" class="hover:text-blue-400 transition-all duration-300 relative group">
+                    Features
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="commands.html" class="hover:text-blue-400 transition-all duration-300 relative group">
+                    Commands
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#stats" class="hover:text-blue-400 transition-all duration-300 relative group">
+                    Stats
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </a>
+            </div>
+            <!-- Action Buttons -->
+            <div class="flex items-center space-x-4">
+                <button onclick="MBTheme.toggle()" class="theme-toggle text-sm"><span class="material-icons">brightness_6</span><span data-role="theme-label">Dark</span></button>
+                <button id="discord-login" class="discord-login group relative overflow-hidden">
+                    <span class="relative z-10">Login with Discord</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button> 
+                <!-- Invite Button -->
+                <a href="https://discord.com/oauth2/authorize?client_id=1068620487082647694&permissions=8&scope=applications.commands+bot" 
+                   class="invite-button text-white font-bold py-3 px-8 rounded-2xl shadow-2xl relative overflow-hidden group">
+                    <span class="relative z-10">Invite</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative flex items-center justify-center min-h-screen text-center overflow-hidden">
+            <!-- Background Banner Image -->
+            <img src="https://i.ibb.co/8gN1yVGR/Multibot-banner-1.png"
+                 alt="Multibot Banner"
+                 class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-30">
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0 z-0 bg-gradient-to-t from-gray-950 via-gray-950/80 to-gray-950/40"></div>
+            
+            <!-- Floating Elements -->
+            <div class="absolute inset-0 z-0 overflow-hidden">
+                <div class="absolute top-20 left-20 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-20 right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div class="absolute top-1/2 left-1/4 w-24 h-24 bg-blue-400/10 rounded-full blur-2xl animate-pulse delay-500"></div>
+            </div>
+            
+            <!-- Hero Content -->
+            <div class="hero-content relative z-10 p-8 sm:p-12 md:p-20 rounded-3xl bg-gray-900/60 backdrop-blur-xl mx-4 max-w-5xl border border-gray-700/50 shadow-2xl">
+                <div class="mb-8">
+                    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black text-white leading-tight mb-6 bg-gradient-to-r from-white via-blue-100 to-blue-200 bg-clip-text text-transparent">
+                        The Ultimate
+                        <span class="block bg-gradient-to-r from-blue-400 via-purple-400 to-blue-600 bg-clip-text text-transparent">
+                            All-in-One Bot
+                        </span>
+                    </h1>
+                    <p class="text-2xl sm:text-3xl md:text-4xl text-gray-300 mb-12 font-medium max-w-4xl mx-auto leading-relaxed">
+                        Everything you need in one powerful, intelligent Discord bot.
+                    </p>
+                </div>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1068620487082647694&permissions=8&scope=applications.commands+bot" 
+                       class="group relative px-12 py-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                        <span class="relative z-10">🚀 Add to Discord</span>
+                        <div class="absolute inset-0 bg-gradient-to-r from-blue-700 to-purple-700 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </a>
+                    <a href="commands.html" 
+                       class="group px-12 py-6 border-2 border-gray-600 text-white font-bold text-xl rounded-2xl hover:border-blue-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                        📚 View Commands
+                    </a>
+                </div>
+                
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats" class="container mx-auto px-6 py-32">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-6">Bot Statistics</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">Real-time data showing MultiBot's impact across Discord servers</p>
+            </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="mb-card p-8 rounded-3xl shadow-2xl text-center group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-blue-400 text-6xl font-black mb-2">35</p>
+                    <p class="text-gray-400 font-semibold text-lg">Active Servers</p>
+                </div>
+                <div class="mb-card p-8 rounded-3xl shadow-2xl text-center group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-purple-400 text-6xl font-black mb-2">29</p>
+                    <p class="text-gray-400 font-semibold text-lg">Powerful Commands</p>
+                </div>
+                <div class="mb-card p-8 rounded-3xl shadow-2xl text-center group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mx-auto mb-6 flex items-center justify-center shadow-lg">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <p class="text-blue-400 text-6xl font-black mb-2">24/7</p>
+                    <p class="text-gray-400 font-semibold text-lg">Reliable Uptime</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="container mx-auto px-6 py-32">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-black text-white mb-6">Powerful Features</h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">Discover what makes MultiBot the ultimate choice for Discord server management</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature Card 1 -->
+                <div class="mb-card p-8 rounded-3xl shadow-2xl group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-6 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-1.5-1.5-3-3-3s-3 1.5-3 3"/><path d="M15 13a4 4 0 0 0 0 8"/></svg>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Member Management</h3>
+                    <p class="text-gray-400 leading-relaxed">Easily manage your community with powerful commands for roles, nicknames, and member organization.</p>
+                </div>
+                
+                <!-- Feature Card 2 -->
+                <div class="mb-card p-8 rounded-3xl shadow-2xl group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-6 flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M20 13c0 5-2.73 7.7-4 8-1.27-.3-4-3-4-8s5-1.74 7-5 7 2 7 5"/><path d="m9 12 2 2 4-4"/></svg>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Advanced Moderation</h3>
+                    <p class="text-gray-400 leading-relaxed">Keep your server safe and organized with a robust suite of moderation tools and automated protection.</p>
+                </div>
+                
+                <!-- Feature Card 3 -->
+                <div class="mb-card p-8 rounded-3xl shadow-2xl group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 18v-6a6 6 0 1 1 6 0v6"/><path d="M12 12V4l8-2v10"/></svg>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Server Customization</h3>
+                    <p class="text-gray-400 leading-relaxed">Customize your server with a variety of fun and useful commands, themes, and automated features.</p>
+                </div>
+                
+                <!-- Feature Card 4 -->
+                <div class="mb-card p-8 rounded-3xl shadow-2xl group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl mb-6 flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M18 8a6 6 0 0 1-12 0V5a6 6 0 0 1 12 0v3z"/><path d="M13.73 21a2.27 2.27 0 0 0 0 8"/></svg>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Smart Notifications</h3>
+                    <p class="text-gray-400 leading-relaxed">Stay updated with intelligent server notifications, announcements, and automated alerts.</p>
+                </div>
+                
+                <!-- Feature Card 5 -->
+                <div class="mb-card p-8 rounded-3xl shadow-2xl group hover:transform hover:scale-105 transition-all duration-500">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl mb-6 flex items-center justify-center shadow-lg group-hover:shadow-blue-500/25 transition-all duration-300">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2s3 3 3 5c0 2.64-1.36 4-4 4s-4-1.36-4-4c0-2 3-5 3-5"/><circle cx="12" cy="12" r="10"/><path d="M7 11.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/><path d="M15 11.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/></svg>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Fun & Games</h3>
+                    <p class="text-gray-400 leading-relaxed">Have fun with your server using a variety of entertaining commands, games, and interactive features.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Commands Preview Section -->
+        <section id="commands" class="bg-gradient-to-br from-gray-900 to-gray-950 py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-5xl md:text-6xl font-black mb-16 text-white">Bot Commands</h2>
+                <p class="text-xl text-gray-400 mb-16 max-w-3xl mx-auto">A comprehensive suite of commands designed to enhance your Discord server experience</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+                    <!-- Command Card 1 -->
+                    <div class="mb-card p-8 rounded-3xl shadow-2xl transition-all duration-300 group hover:transform hover:scale-105">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl mb-4 flex items-center justify-center">
+                            <span class="text-white font-mono text-lg">/</span>
+                        </div>
+                        <span class="bg-blue-600 text-white font-mono px-4 py-2 rounded-xl text-sm inline-block mb-4">/kick</span>
+                        <p class="text-gray-400 leading-relaxed">Kick a user from the server with an optional reason and automated logging.</p>
+                    </div>
+                    
+                    <!-- Command Card 2 -->
+                    <div class="mb-card p-8 rounded-3xl shadow-2xl transition-all duration-300 group hover:transform hover:scale-105">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center">
+                            <span class="text-white font-mono text-lg">/</span>
+                        </div>
+                        <span class="bg-purple-600 text-white font-mono px-4 py-2 rounded-xl text-sm inline-block mb-4">/ban</span>
+                        <p class="text-gray-400 leading-relaxed">Ban a user from the server with comprehensive moderation tools and audit trails.</p>
+                    </div>
+                    
+                    <!-- Command Card 3 -->
+                    <div class="mb-card p-8 rounded-3xl shadow-2xl transition-all duration-300 group hover:transform hover:scale-105">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center">
+                            <span class="text-white font-mono text-lg">/</span>
+                        </div>
+                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-mono px-4 py-2 rounded-xl text-sm inline-block mb-4">/help</span>
+                        <p class="text-gray-400 leading-relaxed">Get a comprehensive list of all available commands with detailed usage instructions.</p>
+                    </div>
+                    
+                    <!-- Command Card 4 -->
+                    <div class="mb-card p-8 rounded-3xl shadow-2xl transition-all duration-300 group hover:transform hover:scale-105">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl mb-4 flex items-center justify-center">
+                            <span class="text-white font-mono text-lg">/</span>
+                        </div>
+                        <span class="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-mono px-4 py-2 rounded-xl text-sm inline-block mb-4">/clear</span>
+                        <p class="text-gray-400 leading-relaxed">Efficiently clear messages in channels with customizable bulk deletion options.</p>
+                    </div>
+                    
+                    <!-- Command Card 5 -->
+                    <div class="mb-card p-8 rounded-3xl shadow-2xl transition-all duration-300 group hover:transform hover:scale-105">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl mb-4 flex items-center justify-center">
+                            <span class="text-white font-mono text-lg">/</span>
+                        </div>
+                        <span class="bg-gradient-to-r from-blue-600 to-purple-600 text-white font-mono px-4 py-2 rounded-xl text-sm inline-block mb-4">/mute</span>
+                        <p class="text-gray-400 leading-relaxed">Advanced user muting with time-based restrictions and voice channel management.</p>
+                    </div>
+                    
+                    <!-- Command Card 6 -->
+                    <div class="glass-card p-8 rounded-3xl shadow-2xl transition-all duration-300 group hover:transform hover:scale-105">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl mb-4 flex items-center justify-center">
+                            <span class="text-white font-mono text-lg">/</span>
+                        </div>
+                        <span class="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-mono px-4 py-2 rounded-xl text-sm inline-block mb-4">/announce</span>
+                        <p class="text-gray-400 leading-relaxed">Professional announcement system with rich formatting and channel targeting.</p>
+                    </div>
+                </div>
+                
+                <!-- View All Commands CTA -->
+                <div class="mt-16">
+                    <a href="commands.html" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                        <span>View All Commands</span>
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer id="support" class="bg-gray-950 text-gray-400 text-center py-16 border-t border-gray-800/50">
+        <div class="container mx-auto px-6">
+            <div class="mb-8">
+                <img src="https://i.ibb.co/cqXrFHT/Multi-Bot-logo.png" alt="MultiBot Logo" class="h-16 w-16 rounded-2xl mx-auto mb-4">
+                <h3 class="text-2xl font-bold text-white mb-2">MultiBot</h3>
+                <p class="text-gray-400">The Ultimate All-in-One Discord Bot</p>
+            </div>
+            <p class="mb-8">&copy; 2025 MultiBot. All rights reserved.</p>
+            <div class="flex flex-wrap justify-center gap-8 text-sm">
+                <a href="https://discord.gg/86STKSQ97k" class="hover:text-blue-400 transition-colors duration-300 flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-.654-.261a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-.654.261a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                    </svg>
+                    Support Server
+                </a>
+                <a href="terms.html" class="hover:text-blue-400 transition-colors duration-300">Terms of Use</a>
+                <a href="privacy.html" class="hover:text-blue-400 transition-colors duration-300">Privacy Policy</a>
+            </div>
+        </div>
+    </footer> 
+    
+    <script src="main.js"></script>
+</body>
+</html>

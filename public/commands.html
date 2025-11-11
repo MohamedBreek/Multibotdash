@@ -1,0 +1,2600 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MultiBot Commands</title>
+    <link
+      rel="icon"
+      href="https://i.ibb.co/cqXrFHT/Multi-Bot-logo.png"
+      type="image/png"
+    />
+    <meta
+      name="description"
+      content="MultiBot Commands - Complete list of all available bot commands."
+    />
+    <meta
+      name="keywords"
+      content="MultiBot Commands, Discord Bot Commands, Bot Features"
+    />
+    <meta name="author" content="MultiBot Team" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script defer src="theme.js"></script>
+  </head>
+  <body class="mb-gradient-bg text-gray-200">
+    <!-- Header Section -->
+    <header class="mb-header fixed top-0 left-0 right-0 z-50">
+      <nav
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <!-- Logo and Bot Name -->
+        <div class="flex items-center space-x-4">
+          <!-- MultiBot Logo -->
+          <div class="relative">
+            <img
+              src="https://i.ibb.co/cqXrFHT/Multi-Bot-logo.png"
+              alt="MultiBot Logo"
+              class="h-16 w-16 rounded-2xl shadow-2xl"
+              onerror="this.src='https://placehold.co/64x64/1e293b/cbd5e1?text=Logo'"
+            />
+            <div
+              class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-20"
+            ></div>
+          </div>
+          <div>
+            <span class="text-4xl font-black text-white tracking-tight"
+              >MultiBot</span
+            >
+            <p class="text-sm text-gray-400 -mt-1">The Ultimate Discord Bot</p>
+          </div>
+        </div>
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-8 text-lg font-medium">
+          <a
+            href="/"
+            class="hover:text-blue-400 transition-all duration-300 relative group"
+          >
+            Home
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="/#features"
+            class="hover:text-blue-400 transition-all duration-300 relative group"
+          >
+            Features
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+          <a
+            href="/#stats"
+            class="hover:text-blue-400 transition-all duration-300 relative group"
+          >
+            Stats
+            <span
+              class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </div>
+        <!-- Action Buttons -->
+        <div class="flex items-center space-x-4">
+          <button onclick="MBTheme.toggle()" class="theme-toggle text-sm">
+            <span class="material-icons">brightness_6</span
+            ><span data-role="theme-label">Dark</span>
+          </button>
+          <button
+            id="discord-login"
+            class="discord-login group relative overflow-hidden"
+          >
+            <span class="relative z-10">Login with Discord</span>
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </button>
+          <a
+            href="https://discord.com/oauth2/authorize?client_id=1068620487082647694&permissions=8&scope=applications.commands+bot"
+            class="invite-button text-white font-bold py-3 px-8 rounded-2xl shadow-2xl relative overflow-hidden group"
+          >
+            <span class="relative z-10">Invite</span>
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></div>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pt-24">
+      <!-- Hero Section -->
+      <section
+        class="text-center py-16 bg-gradient-to-b from-gray-900 to-gray-950"
+      >
+        <div class="container mx-auto px-6">
+          <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            Bot Commands
+          </h1>
+          <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+            Discover all the powerful commands available in MultiBot. From
+            moderation to fun features, we've got everything you need to manage
+            and enhance your Discord server.
+          </p>
+        </div>
+      </section>
+
+      <!-- Search and Filters Section -->
+      <section class="container mx-auto px-6 py-8">
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto mb-8">
+          <div class="relative">
+            <input
+              type="text"
+              id="commandSearch"
+              placeholder="Search for command"
+              class="w-full px-6 py-4 bg-gray-800 border border-gray-700 rounded-xl text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            />
+            <svg
+              class="absolute right-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap justify-center gap-4 mb-12">
+          <button
+            class="category-filter active px-6 py-3 bg-blue-600 text-white rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2"
+            data-category="all"
+          >
+            <span class="text-lg">&gt;_</span>
+            <span>All</span>
+          </button>
+          <button
+            class="category-filter px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2"
+            data-category="general"
+          >
+            <span class="text-lg">🤖</span>
+            <span>General</span>
+          </button>
+          <button
+            class="category-filter px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2"
+            data-category="moderation"
+          >
+            <span class="text-lg">👑</span>
+            <span>Moderation</span>
+          </button>
+          <button
+            class="category-filter px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2"
+            data-category="setup"
+          >
+            <span class="text-lg">🛠️</span>
+            <span>Setup</span>
+          </button>
+          <button
+            class="category-filter px-6 py-3 bg-gray-700 hover:bg-gray-600 text-gray-300 rounded-xl font-semibold transition-all duration-300 flex items-center space-x-2"
+            data-category="fun"
+          >
+            <span class="text-lg">🎮</span>
+            <span>Fun</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Commands Grid -->
+      <section class="container mx-auto px-6 py-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6"
+          id="commandsGrid"
+        >
+          <!-- Command Card Template -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="ask ai chat"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/ask</h3>
+                  <p class="text-gray-400 text-sm">Ask the AI anything</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/ask [question]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/ask What is Discord?</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/ask How to moderate a server?</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /say Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="say message bot"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/say</h3>
+                  <p class="text-gray-400 text-sm">
+                    Make the bot say your message
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/say [message]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/say Hello everyone!</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/say Welcome to our server!</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /timeout Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="timeout mute user"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/timeout</h3>
+                  <p class="text-gray-400 text-sm">
+                    To timeout a user temporarily
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400"
+                    >/timeout [@user] [time] [reason]</code
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/timeout @Faisal</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/timeout @Faisal 1h</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/timeout @Faisal 1h Spamming</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /kick Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="kick user remove"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/kick</h3>
+                  <p class="text-gray-400 text-sm">
+                    Kick a user from the server
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/kick [@user] [reason]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/kick @User</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/kick @User Breaking rules</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /ban Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="ban user permanent"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/ban</h3>
+                  <p class="text-gray-400 text-sm">
+                    Ban a user from the server
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/ban [@user] [reason]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/ban @User</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/ban @User Severe violation</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /warn Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="warn user warning"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/warn</h3>
+                  <p class="text-gray-400 text-sm">Warn a user</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/warn [@user] [reason]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/warn @User</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/warn @User Spamming</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /unwarn Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="unwarn remove warning"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/unwarn</h3>
+                  <p class="text-gray-400 text-sm">
+                    Remove a warning from a user
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400"
+                    >/unwarn [@user] [warning_id]</code
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/unwarn @User</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /warning Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="warning view user"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/warning</h3>
+                  <p class="text-gray-400 text-sm">View a user's warnings</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/warning [@user]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/warning @User</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /mute Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="mute user voice"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/mute</h3>
+                  <p class="text-gray-400 text-sm">Mute a user</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/mute [@user] [reason]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/mute @User</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/mute @User Being loud</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /lock Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="lock channel"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/lock</h3>
+                  <p class="text-gray-400 text-sm">Lock a channel</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/lock [channel]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/lock</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/lock #general</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /unlock Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="unlock channel"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/unlock</h3>
+                  <p class="text-gray-400 text-sm">Unlock a channel</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/unlock [channel]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/unlock</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/unlock #general</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /clear Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="clear messages delete"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/clear</h3>
+                  <p class="text-gray-400 text-sm">Clear messages</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/clear [amount]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/clear</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/clear 10</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /nick Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="nick nickname change"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/nick</h3>
+                  <p class="text-gray-400 text-sm">Change a user's nickname</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/nick [@user] [nickname]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/nick @User CoolGuy</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /delete-all-rooms Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="moderation"
+            data-search="delete all channels rooms"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">
+                    /delete-all-rooms
+                  </h3>
+                  <p class="text-gray-400 text-sm">Delete all channels</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400"
+                    >/delete-all-rooms [confirmation]</code
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/delete-all-rooms confirm</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /announce Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="announce announcement message"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/announce</h3>
+                  <p class="text-gray-400 text-sm">
+                    Send an announcement to a channel
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400"
+                    >/announce [channel] [message]</code
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/announce #general Hello everyone!</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/announce #announcements Server maintenance</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /server Command -->
+          <div
+            class="command-card mb-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="server info details"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/server</h3>
+                  <p class="text-gray-400 text-sm">Server info</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/server</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/server</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /bot Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="bot info details"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/bot</h3>
+                  <p class="text-gray-400 text-sm">Bot info</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/bot</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/bot</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /server-setup Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="server setup channels"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/server-setup</h3>
+                  <p class="text-gray-400 text-sm">Create themed channels</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/server-setup [theme]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/server-setup gaming</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/server-setup community</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /giveaway Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="fun"
+            data-search="giveaway prize"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/giveaway</h3>
+                  <p class="text-gray-400 text-sm">
+                    Manage giveaways (mod only)
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400"
+                    >/giveaway [action] [options]</code
+                  >
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/giveaway start</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/giveaway reroll</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /poll Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="fun"
+            data-search="poll vote question"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/poll</h3>
+                  <p class="text-gray-400 text-sm">Create a quick poll</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/poll [question] [options]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/poll What's your favorite game?</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/poll Should we add music?</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /help Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="help commands list"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/help</h3>
+                  <p class="text-gray-400 text-sm">Show this help panel</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/help [category]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/help</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/help moderation</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /avatar Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="avatar user profile picture"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/avatar</h3>
+                  <p class="text-gray-400 text-sm">Show a user's avatar</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/avatar [@user]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/avatar</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/avatar @User</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /userinfo Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="user info details profile"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/userinfo</h3>
+                  <p class="text-gray-400 text-sm">
+                    Show detailed info about a user
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/userinfo [@user]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/userinfo</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/userinfo @User</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /servericon Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="server icon logo"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/servericon</h3>
+                  <p class="text-gray-400 text-sm">Show the server's icon</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/servericon</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/servericon</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /meme Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="fun"
+            data-search="meme random funny"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/meme</h3>
+                  <p class="text-gray-400 text-sm">Get a random meme</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/meme</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/meme</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /coinflip Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="fun"
+            data-search="coin flip heads tails"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/coinflip</h3>
+                  <p class="text-gray-400 text-sm">Flip a coin</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/coinflip</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/coinflip</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /roll Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="fun"
+            data-search="roll dice game"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/roll</h3>
+                  <p class="text-gray-400 text-sm">Roll dice (e.g., 1d20)</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/roll [dice]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/roll</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/roll 1d20</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /ping Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="ping latency bot"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/ping</h3>
+                  <p class="text-gray-400 text-sm">Check the bot's latency</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/ping</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/ping</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /flag Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="fun"
+            data-search="flag guessing game"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/flag</h3>
+                  <p class="text-gray-400 text-sm">Play a flag guessing game</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/flag</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/flag</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /afk Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="afk away status"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/afk</h3>
+                  <p class="text-gray-400 text-sm">Set your AFK status</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/afk [reason]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/afk</code>
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/afk Going to sleep</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /link Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="general"
+            data-search="link invite server"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/link</h3>
+                  <p class="text-gray-400 text-sm">
+                    Get the invite link to this server
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/link</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/link</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /suggest Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="suggest suggestion feedback"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/suggest</h3>
+                  <p class="text-gray-400 text-sm">Submit a suggestion</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/suggest [suggestion]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/suggest Add music bot</code
+                    >
+                  </div>
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/suggest More fun commands</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /suggest-setup Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="suggest setup channel"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/suggest-setup</h3>
+                  <p class="text-gray-400 text-sm">
+                    Set the suggestion channel
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/suggest-setup [channel]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/suggest-setup #suggestions</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /role-setup Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="role setup create roles"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/role-setup</h3>
+                  <p class="text-gray-400 text-sm">Create default roles</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/role-setup</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm">/role-setup</code>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /addemoji Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="add emoji custom mod"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/addemoji</h3>
+                  <p class="text-gray-400 text-sm">
+                    Add a custom emoji (mod only)
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/addemoji [name] [url]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/addemoji cool https://example.com/emoji.png</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /addsticker Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="add sticker custom mod"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/addsticker</h3>
+                  <p class="text-gray-400 text-sm">
+                    Add a custom sticker (mod only)
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/addsticker [name] [url]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/addsticker awesome https://example.com/sticker.png</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /role Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="role add member"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/role</h3>
+                  <p class="text-gray-400 text-sm">Add a role to a member</p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/role [@user] [role]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/role @User Member</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- /removerole Command -->
+          <div
+            class="command-card glass-card p-6 rounded-2xl shadow-xl transition-all duration-300"
+            data-category="setup"
+            data-search="remove role member"
+          >
+            <div class="flex items-start justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <div
+                  class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center"
+                >
+                  <span class="text-white text-lg">&lt;/&gt;</span>
+                </div>
+                <div>
+                  <h3 class="text-xl font-bold text-white">/removerole</h3>
+                  <p class="text-gray-400 text-sm">
+                    Remove a role from a member
+                  </p>
+                </div>
+              </div>
+              <button
+                class="text-gray-400 hover:text-white transition-colors duration-300"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 15l7-7 7 7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">&gt;_ Usage</h4>
+                <div class="bg-gray-800 rounded-lg p-3">
+                  <code class="text-green-400">/removerole [@user] [role]</code>
+                </div>
+              </div>
+              <div>
+                <h4 class="text-blue-400 font-semibold mb-2">▶ Examples</h4>
+                <div class="space-y-2">
+                  <div class="bg-gray-800 rounded-lg p-2">
+                    <code class="text-gray-300 text-sm"
+                      >/removerole @User Member</code
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-gradient-to-br from-gray-900 to-gray-950 py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+            Ready to Get Started?
+          </h2>
+          <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            Add MultiBot to your Discord server and start using all these
+            powerful features today!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://discord.com/oauth2/authorize?client_id=1068620487082647694&permissions=8&scope=applications.commands+bot"
+              class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+            >
+              <span>🚀 Add to Discord</span>
+            </a>
+            <a
+              href="https://discord.gg/86STKSQ97k"
+              class="inline-flex items-center px-8 py-4 border-2 border-gray-600 text-white font-bold text-lg rounded-2xl hover:border-blue-400 hover:text-blue-400 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
+            >
+              <span>💬 Join Support Server</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer
+      id="support"
+      class="bg-gray-950 text-gray-400 text-center py-16 border-t border-gray-800/50"
+    >
+      <div class="container mx-auto px-6">
+        <div class="mb-8">
+          <img
+            src="https://i.ibb.co/cqXrFHT/Multi-Bot-logo.png"
+            alt="MultiBot Logo"
+            class="h-16 w-16 rounded-2xl mx-auto mb-4"
+          />
+          <h3 class="text-2xl font-bold text-white mb-2">MultiBot</h3>
+          <p class="text-gray-400">The Ultimate All-in-One Discord Bot</p>
+        </div>
+        <p class="mb-8">&copy; 2025 MultiBot. All rights reserved.</p>
+        <div class="flex flex-wrap justify-center gap-8 text-sm">
+          <a
+            href="https://discord.gg/86STKSQ97k"
+            class="hover:text-blue-400 transition-colors duration-300 flex items-center"
+          >
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-.654-.261a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-.654.261a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"
+              />
+            </svg>
+            Support Server
+          </a>
+          <a
+            href="terms.html"
+            class="hover:text-blue-400 transition-colors duration-300"
+            >Terms of Use</a
+          >
+          <a
+            href="privacy.html"
+            class="hover:text-blue-400 transition-colors duration-300"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Search functionality
+      document
+        .getElementById("commandSearch")
+        .addEventListener("input", function (e) {
+          const searchTerm = e.target.value.toLowerCase();
+          const commandCards = document.querySelectorAll(".command-card");
+
+          commandCards.forEach((card) => {
+            const searchData = card.getAttribute("data-search").toLowerCase();
+            const commandName = card
+              .querySelector("h3")
+              .textContent.toLowerCase();
+
+            if (
+              searchData.includes(searchTerm) ||
+              commandName.includes(searchTerm)
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+
+      // Category filter functionality
+      document.querySelectorAll(".category-filter").forEach((button) => {
+        button.addEventListener("click", function () {
+          // Remove active class from all buttons
+          document.querySelectorAll(".category-filter").forEach((btn) => {
+            btn.classList.remove("active", "bg-blue-600", "text-white");
+            btn.classList.add("bg-gray-700", "text-gray-300");
+          });
+
+          // Add active class to clicked button
+          this.classList.add("active", "bg-blue-600", "text-white");
+          this.classList.remove("bg-gray-700", "text-gray-300");
+
+          const category = this.getAttribute("data-category");
+          const commandCards = document.querySelectorAll(".command-card");
+
+          commandCards.forEach((card) => {
+            if (
+              category === "all" ||
+              card.getAttribute("data-category") === category
+            ) {
+              card.style.display = "block";
+            } else {
+              card.style.display = "none";
+            }
+          });
+        });
+      });
+
+      // Expand/collapse command details
+      document.querySelectorAll(".command-card button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const card = this.closest(".command-card");
+          const details = card.querySelector(".grid");
+
+          if (details.style.display === "none") {
+            details.style.display = "grid";
+            this.innerHTML =
+              '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg>';
+          } else {
+            details.style.display = "none";
+            this.innerHTML =
+              '<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>';
+          }
+        });
+      });
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
